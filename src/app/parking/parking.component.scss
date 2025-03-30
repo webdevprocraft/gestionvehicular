@@ -1,0 +1,155 @@
+.card-shadow {
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.container {
+  padding: 30px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  background: linear-gradient(to right, #a3c6e6, #ffffff);
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  font-weight: bold;
+  background: #f8f9fa;
+  border-bottom: 2px solid #ccc;
+}
+
+.table {
+  margin-top: 10px;
+}
+
+.estatus-a-tiempo {
+  color: green;
+  font-weight: bold;
+}
+
+.estatus-por-vencer {
+  color: orange;
+  font-weight: bold;
+}
+
+.estatus-multa {
+  color: red;
+  font-weight: bold;
+}
+
+.custom-delete {
+  background-color: #e94c3b;
+  color: #ffffff;
+  border: none;
+  padding: 10 20;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.custom-delete:hover {
+  background-color: #eb776a;
+}
+
+
+.custom-agregar {
+  background-color: #28a745;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.custom-finalizar:hover {
+  background-color: #218838;
+}
+
+/* Estilos para los inputs */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #495057;
+  margin-bottom: 5px;
+}
+.sinborde {
+  border: 0;
+  /*border-bottom: 1px solid #dee2e6; */
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-el {
+  background-color: #8d58f0 ; // Azul Marino
+  color: #ffffff; // Blanco para el texto del botón
+  border: none; // Quitar el borde predeterminado
+  padding: 8px 15px; // Ajustar el relleno
+  border-radius: 5px; // Bordes redondeados
+  font-size: 14px; // Tamaño de la fuente
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2); /* Sombra sutil para efecto flotante */
+  transition: background-color 0.3s ease; // Transición suave para el color de fondo
+
+  &:hover {
+    background-color: #ad88f1// Azul Claro al pasar el ratón
+  }
+}
+.filtro-container {
+  margin-bottom: 10px;
+}
+
+.filtro-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background-color: white;
+  width: 300px; /* Ajusta el ancho */
+}
+
+.filtro-wrapper i {
+  color: #777;
+  font-size: 16px;
+  margin-right: 10px; /* Espacio entre el ícono y el input */
+}
+
+.filtro-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px; /* Tamaño de texto más grande */
+  background: transparent;
+  padding: 5px 0;
+}

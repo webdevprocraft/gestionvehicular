@@ -1,0 +1,86 @@
+<div class="container">
+  <h2 class="text-center">Gestión de Placas de Estacionamiento</h2>
+
+  <div class="card card-shadow">
+    <div class="card-header text-center">
+      <h3>Registrar Placa</h3>
+    </div>
+    <div class="card-body">
+      <form (submit)="agregarPlaca()">
+        <div class="form-group">
+          <div class="row">
+            <div class="col col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+              <input id="calles" class="form-control" type="text" placeholder="Agregar calles" [(ngModel)]="calles" name="calle" required>
+            </div>
+            <div class="col col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+              <input id="placa" class="form-control" type="text" placeholder="Agregar Placa" [(ngModel)]="nuevaPlaca" name="placa" required>
+            </div>
+
+            <div class="col col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+              <button type="submit" class="btn custom-agregar">Agregar&nbsp;<i class="pi pi-plus"></i></button>
+            </div>
+
+            <div class="col col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+              <button type="button" class="btn custom-el" (click)="eliminarTodas()">Vaciar Registros&nbsp;<i class="pi pi-trash"></i></button>
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card card-shadow mt-4">
+    <div class="card-header text-center">
+      <h3>Registros</h3>
+    </div>
+    <div class="card-body">
+      <p-table [value]="registros" class="p-datatable-striped" #dt1
+      [paginator]="true" [rows]="15" [rowsPerPageOptions]="[10,20,30,50]" [showCurrentPageReport]="true"
+      currentPageReportTemplate=" {first} a {last} de {totalRecords} Registros"
+       [globalFilterFields]="['placa','calles']">
+       <ng-template pTemplate="caption">
+        <div class="filtro-container d-flex justify-content-end">
+          <span class="p-input-icon-left filtro-wrapper">
+            <i class="pi pi-search" ></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input pInputText type="text" class="filtro-input"
+              (input)="applyFilterGlobal($event, 'contains')"
+              placeholder="Buscar placa" />
+          </span>
+        </div>
+      </ng-template>
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Placa</th>
+            <th>Hora de Registro</th>
+            <th>Calles</th>
+            <th>Estatus</th>
+            <th>Acciones</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-registro>
+          <tr>
+            <td>{{ registro.placa }}</td>
+            <td><b>{{ registro.horaRegistro | date:'shortTime' }}</b></td>
+            <td>{{registro.calles}}</td>
+            <td>
+              <span [ngClass]="{
+                'estatus-a-tiempo': registro.estatus === 'A tiempo',
+                'estatus-por-vencer': registro.estatus === 'Por vencer',
+                'estatus-multa': registro.estatus === 'Multa'
+              }">
+                {{ registro.estatus }}
+              </span>
+            </td>
+            <td>
+              <button class="btn custom-delete btn-sm" (click)="eliminarRegistro(registro)">
+                <i class="pi pi-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
