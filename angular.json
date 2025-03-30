@@ -16,6 +16,7 @@
             "outputPath": "dist/parking-app",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "baseHref": "/gestionvehicular/",
             "polyfills": [
               "zone.js"
             ],
@@ -42,32 +43,25 @@
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "sourceMap": false,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "3mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "outputHashing": "all"
+              "configurations": {
+        "production": {
+          "optimization": true,
+          "sourceMap": false,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "3mb"
             },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
             }
+          ],
+          "outputHashing": "all",
+          "baseHref": "/gestionvehicular/"
+        }
           },
           "defaultConfiguration": "production"
         },
