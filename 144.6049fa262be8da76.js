@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkparking_app=self.webpackChunkparking_app||[]).push([[144],{144:e=>{e.exports=function(){throw new Error("ws does not work in the browser. Browser clients must use the native WebSocket object")}}}]);
